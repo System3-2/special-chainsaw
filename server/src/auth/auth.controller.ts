@@ -2,7 +2,6 @@ import { Controller, Post, Body, HttpCode, HttpStatus, UseGuards, Get, Request }
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { SignUpDto, LoginDto } from './dto';
-import { Request as Req } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -20,9 +19,12 @@ export class AuthController {
     return this.authService.signup(signUpDto)
   }
 
+  @HttpCode(HttpStatus.OK)
   @UseGuards(AuthGuard)
   @Get('home')
-  home() {
-    return 'accessed'
+  async home(@Request() req) {
+    return req.user
   }
+
+
 }
