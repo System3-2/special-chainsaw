@@ -1,4 +1,4 @@
-import { IsEmail, IsString, MaxLength, MinLength } from "class-validator";
+import { IsEmail, IsString, MaxLength, MinLength, Matches } from "class-validator";
 
 export class SignUpDto {
   @IsString()
@@ -26,9 +26,7 @@ export class SignUpDto {
   @MinLength(8, {
     message: 'Password must be a minimum of 8 characters'
   })
-  @MaxLength(50, {
-    message: 'Password must be less than 50 characters',
-  })
+  @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, { message: 'Password must contain a letter, a number and a special character' })
   password: string;
 
 }
