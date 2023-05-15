@@ -26,18 +26,21 @@ export class AuthGuard implements CanActivate {
           secret: jwtConstants.secret
         }
       );
-      console.log(payload)
-      // const user = await this.prisma.user.findUnique({
-      //  where: payload.user,
-      // select: {
-      // firstName: true,
-      // lastName: true,
-      // email: true
-      // }
-      //})
+      // console.log(payload)
+      const user = await this.prisma.user.findUnique({
+        where: {
+          email: payload.email
+        },
+        select: {
+          email: true,
+          lastName: true,
+          firstName: true
+        }
+      })
+      //console.log(user)
       // 💡 We're assigning the payload to the request object here
       // so that we can access it in our route handlers
-      request['user'] = payload;
+      request['user'] = user;
       // request['user'] = user;
     } catch {
       throw new UnauthorizedException();

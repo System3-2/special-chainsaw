@@ -11,7 +11,7 @@ import { AuthService } from './auth/auth.service';
     JwtModule.register({
       global: true,
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '60s' },
+      signOptions: { expiresIn: '30m' },
     }),
   ],
   controllers: [AuthController],
