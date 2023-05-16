@@ -4,6 +4,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
 import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
+import { GoogleModule } from './google/google.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { AuthService } from './auth/auth.service';
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '30m' },
     }),
+    GoogleModule,
   ],
   controllers: [AuthController],
   providers: [AuthService],
