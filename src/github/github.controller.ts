@@ -14,8 +14,7 @@ export class GithubController {
   @Get('redirects')
   @UseGuards(AuthGuard('github'))
   async authCallback(@Req() req) {
-    return 'githubbbb'
-    //return this.githubService.githubLogin(req)
+    return this.githubService.githubLogin(req)
   }
 
 

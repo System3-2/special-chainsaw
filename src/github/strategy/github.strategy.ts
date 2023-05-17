@@ -1,20 +1,21 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { PassportStrategy } from '@nestjs/passport';
-import { Profile, Strategy } from 'passport-github';
+import { Strategy } from 'passport-github2';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
-  constructor(configService: ConfigService) {
+  constructor(config: ConfigService) {
     super({
-      clientID: configService.get<string>('GITHUB_CLIENT_ID'),
-      clientSecret: configService.get<string>('GITHUB_CLIENT_SECRET'),
-      callbackURL: 'http://localhost:8000/github/redirects',
-      scope: ['public_profile'],
+      clientID: config.get('GITHUB_CLIENT_ID'),
+      clientSecret: config.get('GITHUB_CLIENT_SECRET'),
+      callbackURL: 'http://localhost:8080/github/redirects',
     });
   }
 
-  async validate(accessToken: string, _refreshToken: string, profile: Profile) {
-    return profile;
+  async validate(accessToken: string, refreshToken: string, profile: any, done: any) {
+    // const user = await this.authService.validateOAuthUser('github', profile.id);
+    //console.log(accessToken)
+    done(null, profile);
   }
 }
