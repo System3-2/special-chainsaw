@@ -9,7 +9,6 @@ export class GithubService {
     }
 
     return {
-      message: 'User information from google',
       user: req.user
     }
   }

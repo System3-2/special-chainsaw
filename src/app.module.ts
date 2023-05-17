@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
-import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { GoogleModule } from './google/google.module';
 import { ConfigModule } from '@nestjs/config';
 import { GithubModule } from './github/github.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -22,7 +22,7 @@ import { GithubModule } from './github/github.module';
     }),
     GithubModule
   ],
-  controllers: [AuthController],
+  controllers: [AppController],
   providers: [AuthService],
   exports: [AuthService]
 })
