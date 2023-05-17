@@ -2,7 +2,8 @@ import { Controller, Post, Body, HttpCode, HttpStatus, UseGuards, Get, Request }
 //import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { SignUpDto, LoginDto } from './dto';
-import { AuthGuard } from '@nestjs/passport';
+//import { AuthGuard } from '@nestjs/passport';
+import { MultiAuthGuard } from 'src/multiAuthGuard';
 
 @Controller('auth')
 export class AuthController {
@@ -21,7 +22,7 @@ export class AuthController {
   }
 
   @HttpCode(HttpStatus.OK)
-  @UseGuards(AuthGuard(['jwt', 'github', 'google']))
+  @UseGuards(MultiAuthGuard)
   @Get('home')
   async home() {
     return 'jfo'
