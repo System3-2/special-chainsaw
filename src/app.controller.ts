@@ -8,7 +8,7 @@ export class AppController {
   @Render('index')
   homepage() {
     return {
-      message: 'Home page'
+      message: `Home page, i'm so excited`
     }
   }
 }
