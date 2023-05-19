@@ -9,7 +9,7 @@ import { InternalServerErrorExceptionFilter } from './Exceptions/InternalServerE
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalFilters(new InternalServerErrorExceptionFilter(), new NotFoundExceptionFilter())
-  app.useStaticAssets(join(__dirname, '..', 'public'))
+  app.useStaticAssets(join(__dirname, '..', 'public',))
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.setViewEngine('hbs')
   app.useGlobalPipes(new ValidationPipe({
