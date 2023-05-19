@@ -27,6 +27,9 @@ export class AuthController {
   async home() {
     return 'jfo'
   }
-
+  @Get('/crash')
+  crash() {
+    throw new Error('Oops an error occurred');
+  }
 
 }

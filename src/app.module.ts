@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { AuthModule } from './auth/auth.module';
-import { JwtModule } from '@nestjs/jwt';
-import { jwtConstants } from './constants';
-import { AuthService } from './auth/auth.service';
-import { GoogleModule } from './google/google.module';
 import { ConfigModule } from '@nestjs/config';
-import { GithubModule } from './github/github.module';
+import { JwtModule } from '@nestjs/jwt';
 import { AppController } from './app.controller';
+import { AuthModule } from './auth/auth.module';
+import { AuthService } from './auth/auth.service';
+import { jwtConstants } from './constants';
+import { GithubModule } from './github/github.module';
+import { GoogleModule } from './google/google.module';
 
 @Module({
   imports: [
@@ -20,10 +20,13 @@ import { AppController } from './app.controller';
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    GithubModule
+    GithubModule,
+
   ],
   controllers: [AppController],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+  ],
   exports: [AuthService]
 })
 export class AppModule { }
