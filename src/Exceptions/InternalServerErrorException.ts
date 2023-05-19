@@ -20,11 +20,11 @@ export class InternalServerErrorExceptionFilter implements ExceptionFilter {
     //const statusName = "系统内部错误";
     res.statusCode = HttpStatus.INTERNAL_SERVER_ERROR;
     // HttpException Error
-    if (exception instanceof HttpException) {
-      // set httpException res to res
-      res.status(exception.getStatus()).json(exception.getResponse());
-      return;
-    }
+    //  if (exception instanceof HttpException) {
+    // set httpException res to res
+    //    res.status(exception.getStatus()).json(exception.getResponse());
+    //  return;
+    // }
     // other error to rewirte InternalServerErrorException response
     res.render("500", {
       exception,

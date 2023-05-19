@@ -1,2 +1,1 @@
-const document = document.body
-console.log(document)
+console.log('web javascript')

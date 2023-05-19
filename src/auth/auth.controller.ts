@@ -1,4 +1,4 @@
-import { Controller, Post, Body, HttpCode, HttpStatus, UseGuards, Get, Request } from '@nestjs/common';
+import { Controller, Post, Body, HttpCode, HttpStatus, UseGuards, Get, Request, NotFoundException } from '@nestjs/common';
 //import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { SignUpDto, LoginDto } from './dto';
@@ -32,4 +32,8 @@ export class AuthController {
     throw new Error('Oops an error occurred');
   }
 
+  @Get('notfound')
+  notfound() {
+    throw new NotFoundException()
+  }
 }
