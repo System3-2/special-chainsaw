@@ -8,7 +8,7 @@ export class NotFoundExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse()
 
     response.render('404', {
-      message: 'oops not what you\'re looking for'
+      message: 'oops not what you\'re looking for 😔'
     })
   }
 }
