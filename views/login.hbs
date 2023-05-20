@@ -6,21 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oloja Blog App | Login</title>
     <link rel="stylesheet" type="text/css" href="/public/css/global.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/form.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/public/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/public/assets/favicon_io/apple-touch-icon.png">
 </head>
 <body >
+  <section class="container">
+    <h3>Login</h3>
+    <div class="wrapper">
+    <div class="form-group">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="input" required />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="input" required />
+      </div>
+    </div>  
 
-<div class="login-box">
-  <h2>Login</h2>
-  <form>
-    <div class="user-box">
-      <input type="email" name="email" required>
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="password" required>
-      <label>Password</label>
-    </div>
     <button type="submit" class="btn">
       <span></span>
       <span></span>
@@ -28,25 +34,22 @@
       <span></span>
       Login
     </button>
-  </form>
 
-  <div class="links">
-  Don't have an account? <a href="/sign-up">Sign Up</a>
-  </div>
+    <div class="links">
+      Don't have an account? <a href="/signup">Sign Up</a>
+    </div>
 
-  <div class="socials">
-    <button class="icons-btn google">
-      <i class="fa-brands fa-google"></i>
-    </button>
-    <button class="icons-btn github">
-      <i class="fa-brands fa-github"></i>
-    </button>
-  </div>
+    <div class="socials">
+      <button class="icons-btn google">
+        <i class="fa-brands fa-google"></i>
+      </button>
+      <button class="icons-btn github">
+        <i class="fa-brands fa-github"></i>
+      </button>
+    </div>
 
-</div>
-
-</div>
-
+    </div>
+  </section>
 </body>
 <script src="/public/js/index.js"></script>
 </html>

@@ -1,29 +1,45 @@
-@import url('./global.css');
-.login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 10px 10px rgba(0,0,0,.6);
-  border-radius: 10px;
+@import url('./global.css')
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 2rem;
+  border: 1px solid #000;
 }
-
-.login-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
+.container > h3 {
   text-align: center;
 }
-
-.login-box .user-box {
-  position: relative;
+.wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 400px;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background: var(--clr-grey-9);
+  box-sizing: border-box;
+  box-shadow: 0 10px 10px rgba(0,0,0,.6);
+  border-radius: 4px;
 }
 
-.login-box .user-box input {
+.form-group {
+  display: flex;
+  padding: 4px;
+  width: 100%;
+  gap: .5rem;
+}
+
+label {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -33,25 +49,48 @@
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
-}
-.login-box .user-box label {
-  position: absolute;
-  top:0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
+  position: relative;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+
+input:focus ~ label,
+input:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 12px;
 }
+
+.links {
+  padding-top: 1rem;
+  color: var(--clr-white)
+}
+.links > a {
+  color: var(--clr-primary-4)
+}
+hr {
+  margin: .5rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.icons-btn {
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+.icons-btn .google {
+}
+icons-btn:hover {
+  background-color: var(--clr-primary-9)
+}
+
 
 .btn {
   position: relative;
@@ -80,13 +119,13 @@
   cursor: pointer;
 }
 
-.login-box .btn span {
+.btn span {
   position: absolute;
   display: block;
   cursor: pointer;
 }
 
-.login-box .btn span:nth-child(1) {
+.btn span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -105,7 +144,7 @@
   }
 }
 
-.login-box .btn span:nth-child(2) {
+.btn span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -125,7 +164,7 @@
   }
 }
 
-.login-box .btn span:nth-child(3) {
+.btn span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -145,7 +184,7 @@
   }
 }
 
-.login-box .btn span:nth-child(4) {
+.btn span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -165,31 +204,3 @@
   }
 }
 
-.links {
-  padding-top: 1rem;
-
-}
-.links > a {
-  color: var(--clr-primary-5)
-}
-hr {
-  margin: .5rem;
-}
-.socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  gap: 1rem;
-}
-
-.icons-btn {
-  padding: .5rem 1rem;
-  cursor: pointer;
-}
-
-.icons-btn .google {
-}
-icons-btn:hover {
-  background-color: var(--clr-primary-9)
-}
