@@ -22,6 +22,7 @@
   box-sizing: border-box;
   box-shadow: 0 10px 10px rgba(0,0,0,.6);
   border-radius: 4px;
+  margin-top: 2rem;
 }
 
 .form-group {
@@ -204,3 +205,34 @@ icons-btn:hover {
   }
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99999;
+  background: var(--clr-grey-9);
+}
+
+.logo-container {
+  display: flex;
+  margin: .5rem;
+}
+
+.logo {
+  width: 50px;
+  border-radius: 50%;
+}
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 12px;
+}
+
+.link a {
+  color: var(--clr-green-light);
+}

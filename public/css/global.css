@@ -121,8 +121,4 @@ p {
 /*  global classes */
 
 /* section */
-.section {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
 }
