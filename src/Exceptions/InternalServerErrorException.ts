@@ -9,11 +9,9 @@ import {
 // catch all error
 @Catch()
 export class InternalServerErrorExceptionFilter implements ExceptionFilter {
-  catch(exception: Error, host: ArgumentsHost) {
+  catch(exception: HttpException, host: ArgumentsHost) {
 
     let { message: errMsg, stack: errStack, name: errName } = exception;
-    // let errRes = exception.getResponse();
-    // let errCode = exception.getStatus();
     let ctx = host.switchToHttp();
     let req = ctx.getRequest();
     let res = ctx.getResponse();
@@ -26,13 +24,12 @@ export class InternalServerErrorExceptionFilter implements ExceptionFilter {
     //  return;
     // }
     // other error to rewirte InternalServerErrorException response
-    res.render("500", {
-      exception,
-      errMsg,
+
+    return res.render("500", {
+      errMsg: 'Internal server error',
       errStack,
       errName,
-      statusCode: res.statusCode,
-      req
+
     });
   }
 }
