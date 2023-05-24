@@ -6,7 +6,7 @@ export class AppController {
 
 
   @Get()
-  //@Render('index')
+  @Render('index')
   home() {
     return {
       message: `Home page, i'm so excited`
